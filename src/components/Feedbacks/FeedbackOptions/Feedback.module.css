@@ -1,0 +1,44 @@
+.buttonsContainer {
+  display: flex;
+  gap: 20px;
+}
+
+.button {
+  position: relative;
+  width: 70px;
+  padding: 5px 15px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(221, 215, 215);
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: all ease 350ms;
+}
+.button::after,
+.button::before {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 1px solid black;
+  transition: all ease 350ms;
+}
+.button:hover {
+  transform: scale(1.2);
+  box-shadow: -1px -1px 11px -4px #000000;
+}
+.active {
+  background-color: blue;
+  color: white;
+}
+.button.active.button::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+.button.active.button::before {
+  transform: translate(-50%, -50%) scale(0.8);
+}
